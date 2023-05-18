@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --light-bg-sound-button-unselected: hsl(240, 9%, 89%);
+  --light-bg-sound-button-selected: hsl(194, 97%, 31%);
+  --light-selected-sound: white;
+  --light-main-color: hsl(240, 6%, 21%);
+  --dark-main-color: white;
+  --dark-bg-body: #121214;
+  --dark-bg-sound-button-unselected: #29292E;
+  --dark-bg-sound-button-selected: #0A3442;
+  --dark-button-fill: #C4C4CC;
+}
+
+body {
+  color: var(--light-main-color);
+  font-family: 'Roboto', sans-serif;
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+
+  min-height: 100vh;
+  display: grid;
+}
+
+main {
+  display: flex;
+  gap: 19.2rem;
+
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-40px);
+}
+
+.hide {
+  display: none;
+}
+
+#timer {
+  display: flex;
+}
+
+#controls {
+  display: flex;
+  gap: 4rem;
+}
+
+#controls button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#sounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  width: 30.8rem;
+  height: 33.6rem;
+  gap: 3.2rem;
+}
+
+#sounds button {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+
+  border: none;
+  border-radius: 2.4rem;
+
+  width: 13.8rem;
+  height: 15.2rem;
+
+  background-color: var(--light-bg-sound-button-unselected);
+}
+
+#sounds button svg {
+  transform: translateY(-20px);
+}
+
+#sounds .sounds-bg-selected-light-mode{
+  background-color: var(--light-bg-sound-button-selected);
+}
+
+.container-forest,
+.container-rain,
+.container-coffeeshop,
+.container-fireplace {
+  display: flex;
+  flex-direction: column;
+  width: 13.8rem;
+  height: 15.2rem;
+  align-items: center;
+}
+
+/* dark/light mode */
+
+#dark-mode-on, #light-mode-on {
+  border: none;
+  background-color: inherit;
+  position: fixed;
+  top: 9.5rem;
+  right: 6rem;
+  cursor: pointer;
+}
+
+/* activates on dark mode */
+.background-dark-mode {
+  background-color: var(--dark-bg-body);
+}
+
+.timer-dark-mode {
+  color: var(--dark-main-color);
+}
+
+.controls-dark-mode svg path  {
+  fill: var(--dark-button-fill);
+}
+
+#sounds .sounds-bg-dark-mode {
+  background-color: var(--dark-bg-sound-button-unselected);
+}
+
+.sounds-dark-mode svg path  {
+  fill: var(--dark-button-fill);
+}
+
+#sounds .sounds-bg-selected-dark-mode {
+  background-color: var(--dark-bg-sound-button-selected);
+}
+
+/* volume controls */
+
+#forest-volume-control,
+#rain-volume-control,
+#coffeeshop-volume-control,
+#fireplace-volume-control {
+  width: 9rem;
+  position: absolute;
+  transform: translateY(114px);
+}
